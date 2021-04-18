@@ -7,8 +7,8 @@ touch /etc/init.d/vmhgfs-fuse-mount
 echo "#!/bin/sh" >> /etc/init.d/vmhgfs-fuse-mount
 echo "" >> /etc/init.d/vmhgfs-fuse-mount
 echo "" >> /etc/init.d/vmhgfs-fuse-mount
-echo "mkdir -p /mnt/hgfs > /dev/null" >> /etc/init.d/vmhgfs-fuse-mount
-echo "vmhgfs-fuse .host:/ /mnt/hgfs > /dev/null" >> /etc/init.d/vmhgfs-fuse-mount
+echo "mkdir -p /mnt/hgfs > /dev/null 2>&1" >> /etc/init.d/vmhgfs-fuse-mount
+echo "vmhgfs-fuse .host:/ /mnt/hgfs > /dev/null 2>&1" >> /etc/init.d/vmhgfs-fuse-mount
 echo "" >> /etc/init.d/vmhgfs-fuse-mount
 echo "" >> /etc/init.d/vmhgfs-fuse-mount
 echo "exit 0" >> /etc/init.d/vmhgfs-fuse-mount
