@@ -3,7 +3,7 @@
 
 
 
-#curl -fsSL "http://kali.download/kali/dists/kali-rolling/Release.gpg" | apt-key add -qq - >/dev/null
+#curl -fsSL "http://kali.download/kali/dists/kali-rolling/Release.gpg" | apt-key add -qq - >/dev/null 2>&1
 
 #apt-get update --allow-insecure-repositories
 
