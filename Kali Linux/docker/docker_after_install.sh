@@ -24,7 +24,11 @@ mv /etc/rc5.d/S01docker /etc/rc5.d/S99docker > /dev/null 2>&1
 
 
 
-# Set up docker_pre_start:
+# Copy and set up docker_pre_start:
+BASEDIR=$(dirname $0)
+cp $BASEDIR/docker_pre_start.sh /etc/init.d/docker_pre_start.sh > /dev/null 2>&1
+chmod +x /etc/init.d/docker_pre_start.sh > /dev/null 2>&1
+
 ln -s /etc/init.d/docker_pre_start.sh /etc/rc2.d/S01docker_pre_start > /dev/null 2>&1
 ln -s /etc/init.d/docker_pre_start.sh /etc/rc3.d/S01docker_pre_start > /dev/null 2>&1
 ln -s /etc/init.d/docker_pre_start.sh /etc/rc4.d/S01docker_pre_start > /dev/null 2>&1
