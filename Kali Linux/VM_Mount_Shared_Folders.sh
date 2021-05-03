@@ -2,6 +2,12 @@
 
 
 
+
+apt install -y open-vm-tools-desktop open-vm-tools
+
+
+
+
 rm /etc/init.d/vmhgfs-fuse-mount
 touch /etc/init.d/vmhgfs-fuse-mount
 echo "#!/bin/sh" >> /etc/init.d/vmhgfs-fuse-mount
