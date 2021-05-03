@@ -3,10 +3,11 @@
 
 
 
-# Install wine32 & ".Net 4.8":
+# Install wine32 & ".Net 4.0" & ".Net 4.8":
 apt-get install -y wine wine64
 dpkg --add-architecture i386 && apt-get update && apt-get install -y wine32
 apt-get install -y winetricks
+winetricks dotnet40
 winetricks dotnet48
 
 
