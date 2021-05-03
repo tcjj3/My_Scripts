@@ -30,20 +30,20 @@ cp get-docker.sh get-docker.bak.sh
 
 
 
-sed -Ei "s/8\|'Kali Linux 2')$/8|'Kali Linux 2')\n	\t	\t	\t	\t	\t	\tdist_version='jessie'\n	\t	\t	\t	\t	\t;;\n\n	\t	\t	\t	\t	\t'kali-rolling')/gi" get-docker.sh
+sed -Ei "s/8\|'Kali Linux 2'\)$/8|'Kali Linux 2')\n\t\t\t\t\t\tdist_version='jessie'\n\t\t\t\t\t;;\n\n\t\t\t\t\t'kali-rolling')/gi" get-docker.sh
 
-sed -Ei "s/debian\|raspbian)$/debian|raspbian|kali)/gi" get-docker.sh
+sed -Ei "s/debian\|raspbian\)$/debian|raspbian|kali)/gi" get-docker.sh
 
-sed -Ei "s/ubuntu\|debian\|raspbian)$/ubuntu|debian|raspbian|kali)/gi" get-docker.sh
+sed -Ei "s/ubuntu\|debian\|raspbian\)$/ubuntu|debian|raspbian|kali)/gi" get-docker.sh
 
-sed -Ei "s/8)$/8)\n	\t	\t	\t	\t	\tdist_version='jessie'\n	\t	\t	\t	\t;;\n\n	\t	\t	\t	\t'kali-rolling')/gi" get-docker.sh
+sed -Ei "s/8\)$/8)\n\t\t\t\t\tdist_version='jessie'\n\t\t\t\t;;\n\n\t\t\t\t'kali-rolling')/gi" get-docker.sh
 
-#sed -Ei "s/pre_reqs=\"apt-transport-https/pre_reqs_=\"\"\n	\t	\t	\tpre_reqs=\"apt-transport-https/gi" get-docker.sh
-sed -Ei "s/pre_reqs=\"apt-transport-https ca-certificates curl\"$/pre_reqs=\"apt-transport-https ca-certificates curl\"\n	\t	\t	\tpre_reqs_=\"\"/gi" get-docker.sh
+#sed -Ei "s/pre_reqs=\"apt-transport-https/pre_reqs_=\"\"\n\t\t\tpre_reqs=\"apt-transport-https/gi" get-docker.sh
+sed -Ei "s/pre_reqs=\"apt-transport-https ca-certificates curl\"$/pre_reqs=\"apt-transport-https ca-certificates curl\"\n\t\t\tpre_reqs_=\"\"/gi" get-docker.sh
 
 sed -i "s/if \[ \"\$lsb_dist\" = \"debian\" \]; then$/if [ \"\$lsb_dist\" = \"debian\" ] || [ \"\$lsb_dist\" = \"kali\" ]; then/gi" get-docker.sh
 
-sed -i "s/pre_reqs=\"\$pre_reqs gnupg\"$/pre_reqs=\"\$pre_reqs gnupg\"\n	\t	\t	\t	\tpre_reqs_=\"\$pre_reqs_ gnupg\"/gi" get-docker.sh
+sed -i "s/pre_reqs=\"\$pre_reqs gnupg\"$/pre_reqs=\"\$pre_reqs gnupg\"\n\t\t\t\tpre_reqs_=\"\$pre_reqs_ gnupg\"/gi" get-docker.sh
 
 sed -i "s#\$sh_c 'apt-get update -qq >/dev/null'#\$sh_c 'apt-get update -qq >/dev/null' || \$sh_c 'echo \"continue...\" >/dev/null'#gi" get-docker.sh
 
