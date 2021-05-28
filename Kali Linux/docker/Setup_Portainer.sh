@@ -6,7 +6,11 @@
 
 
 # Modify "docker" service to enable sock:
+tmp=`grep "\-H unix:///var/run/docker.sock" /lib/systemd/system/docker.service`
+
+if [ -z "$tmp" ]; then
 sed -i "s#ExecStart=/usr/bin/dockerd#ExecStart=/usr/bin/dockerd -H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock#g" /lib/systemd/system/docker.service
+fi
 
 
 
