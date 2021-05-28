@@ -7,6 +7,16 @@
 
 
 
+# Update Date & Time to avoid "Release file for xxxxxx is not vaild yet (invaild for another xxxd xxh xxmin xxs)" error:
+ntpdate time.windows.com
+
+
+
+
+
+
+
+
 apt install -y curl
 curl -fsSL get.docker.com -o get-docker.sh
 
