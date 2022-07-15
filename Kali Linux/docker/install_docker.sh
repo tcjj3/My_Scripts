@@ -73,7 +73,7 @@ sed -i "s#\$sh_c \"DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \$pre_r
 chmod +x get-docker.sh
 chmod +x get-docker.bak.sh
 
-sh get-docker.sh
+sh get-docker.sh || apt-get install -y -qq --no-install-recommends docker-ce containerd.io >/dev/null
 
 
 
