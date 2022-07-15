@@ -73,7 +73,7 @@ sed -i "s#\$sh_c \"DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \$pre_r
 chmod +x get-docker.sh
 chmod +x get-docker.bak.sh
 
-sh get-docker.sh || apt-get install -y -qq --no-install-recommends docker-ce containerd.io >/dev/null
+sh get-docker.sh || apt-get install -y -qq --no-install-recommends docker-ce containerd.io >/dev/null || (cgroupfs-mount > /dev/null 2>&1 && ip link add name docker0 type bridge > /dev/null 2>&1 && ip addr add dev docker0 172.17.0.1/16 > /dev/null 2>&1 && ifconfig docker0 up > /dev/null 2>&1 && apt-get install -y -qq --no-install-recommends docker-ce containerd.io >/dev/null)
 
 
 
