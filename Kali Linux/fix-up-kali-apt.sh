@@ -49,6 +49,12 @@ apt-get update
 
 
 
+# Fix-broken:
+#apt-get dist-upgrade
+
+
+
+
 
 
 
