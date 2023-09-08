@@ -10,7 +10,7 @@ apt install -y open-vm-tools-desktop open-vm-tools
 
 rm /etc/init.d/vmhgfs-fuse-mount > /dev/null 2>&1
 touch /etc/init.d/vmhgfs-fuse-mount
-echo "#\!/bin/sh" >> /etc/init.d/vmhgfs-fuse-mount
+echo '#!/bin/bash' >> /etc/init.d/vmhgfs-fuse-mount
 echo "" >> /etc/init.d/vmhgfs-fuse-mount
 echo "" >> /etc/init.d/vmhgfs-fuse-mount
 echo "mkdir -p /mnt/hgfs > /dev/null 2>&1" >> /etc/init.d/vmhgfs-fuse-mount
