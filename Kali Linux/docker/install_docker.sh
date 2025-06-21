@@ -40,13 +40,15 @@ cp get-docker.sh get-docker.bak.sh
 
 
 
-sed -Ei "s/8\|'Kali Linux 2'\)$/8|'Kali Linux 2')\n\t\t\t\t\t\tdist_version='jessie'\n\t\t\t\t\t;;\n\n\t\t\t\t\t'kali-rolling')/gi" get-docker.sh
+#sed -Ei "s/8\|'Kali Linux 2'\)$/8|'Kali Linux 2')\n\t\t\t\t\t\tdist_version='jessie'\n\t\t\t\t\t;;\n\n\t\t\t\t\t'kali-rolling')/gi" get-docker.sh
+sed -Ei "s/11\|'Kali Linux 2'\)$/11|'Kali Linux 2')\n\t\t\t\t\t\tdist_version='bullseye'\n\t\t\t\t\t;;\n\n\t\t\t\t\t'kali-rolling')/gi" get-docker.sh
 
 sed -Ei "s/debian\|raspbian\)$/debian|raspbian|kali)/gi" get-docker.sh
 
 sed -Ei "s/ubuntu\|debian\|raspbian\)$/ubuntu|debian|raspbian|kali)/gi" get-docker.sh
 
-sed -Ei "s/8\)$/8)\n\t\t\t\t\tdist_version='jessie'\n\t\t\t\t;;\n\n\t\t\t\t'kali-rolling')/gi" get-docker.sh
+#sed -Ei "s/8\)$/8)\n\t\t\t\t\tdist_version='jessie'\n\t\t\t\t;;\n\n\t\t\t\t'kali-rolling')/gi" get-docker.sh
+sed -Ei "s/11\)$/11)\n\t\t\t\t\tdist_version='bullseye'\n\t\t\t\t;;\n\n\t\t\t\t'kali-rolling')/gi" get-docker.sh
 
 #sed -Ei "s/pre_reqs=\"apt-transport-https/pre_reqs_=\"\"\n\t\t\tpre_reqs=\"apt-transport-https/gi" get-docker.sh
 sed -Ei "s/pre_reqs=\"apt-transport-https ca-certificates curl\"$/pre_reqs=\"apt-transport-https ca-certificates curl\"\n\t\t\tpre_reqs_=\"\"/gi" get-docker.sh
