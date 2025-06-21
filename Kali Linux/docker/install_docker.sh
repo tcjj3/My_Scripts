@@ -43,6 +43,8 @@ cp get-docker.sh get-docker.bak.sh
 #sed -Ei "s/8\|'Kali Linux 2'\)$/8|'Kali Linux 2')\n\t\t\t\t\t\tdist_version='jessie'\n\t\t\t\t\t;;\n\n\t\t\t\t\t'kali-rolling')/gi" get-docker.sh
 sed -Ei "s/11\|'Kali Linux 2'\)$/11|'Kali Linux 2')\n\t\t\t\t\t\tdist_version='bullseye'\n\t\t\t\t\t;;\n\n\t\t\t\t\t'kali-rolling')/gi" get-docker.sh
 
+sed -Ei "s/debian\|raspbian\)$/kali)\n\t\t\tdist_version=\"bullseye\"\n\t\t;;\n\t\tdebian|raspbian)/gi" get-docker.sh
+
 sed -Ei "s/debian\|raspbian\)$/debian|raspbian|kali)/gi" get-docker.sh
 
 sed -Ei "s/ubuntu\|debian\|raspbian\)$/ubuntu|debian|raspbian|kali)/gi" get-docker.sh
